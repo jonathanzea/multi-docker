@@ -3,20 +3,20 @@ servies:
  - docker
 
 before_install:
- - docker build -t jonathanzea/react-test -f ./client/Dockerfile.dev ./client
+ - docker build -t zetajonathan/react-test -f ./client/Dockerfile.dev ./client
 
 script:
- - docker run -e CI=true jonathanzea/react-test npm test -- --coverage
+ - docker run -e CI=true zetajonathan/react-test npm test -- --coverage
 
 after_success:
- - docker build -t jonathanzea/multi-client ./client
- - docker build -t jonathanzea/multi-nginx ./nginx
- - docker build -t jonathanzea/multi-server ./server
- - docker build -t jonathanzea/multi-worker ./worker
+ - docker build -t zetajonathan/multi-client ./client
+ - docker build -t zetajonathan/multi-nginx ./nginx
+ - docker build -t zetajonathan/multi-server ./server
+ - docker build -t zetajonathan/multi-worker ./worker
  # Log in to the docker CLI
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
  # Take the images and push them to ducker hub
- - docker push jonathanzea/multi-client
- - docker push jonathanzea/multi-nginx
- - docker push jonathanzea/multi-server
- - docker push jonathanzea/multi-worker
+ - docker push zetajonathan/multi-client
+ - docker push zetajonathan/multi-nginx
+ - docker push zetajonathan/multi-server
+ - docker push zetajonathan/multi-worker
