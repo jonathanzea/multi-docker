@@ -5,17 +5,20 @@
 			"name": "client",
 			"image": "zetajonathan/multi-client",
 			"hostname": "client",
-			"essential":false
+			"essential":false,
+			"memory": 128
 		}, 
 		{	"name": "server",
 			"image": "zetajonathan/multi-server",
 			"hostname": "api",
-			"essential": false
+			"essential": false,
+			"memory": 128
 		},
 		{	"name": "worker",
 			"image": "zetajonathan/multi-worker",
 			"hostname": "worker",
 			"essential": true,
+			"memory": 128,
 			"portMappings": [
 				{
 					"hostPort": 80,
