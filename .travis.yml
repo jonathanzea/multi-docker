@@ -20,3 +20,15 @@ after_success:
  - docker push zetajonathan/multi-nginx
  - docker push zetajonathan/multi-server
  - docker push zetajonathan/multi-worker
+
+deploy:
+ provider: elasticbeanstalk
+ region: eu-west-1
+ app: multi-docker
+ env: MultiDocker-env
+ bucket_name: elasticbeanstalk-eu-west-1-219942322862
+ bucket_path: docker-multi
+ on:
+  branch: master
+ acces_key_id: $AWS_ACCESS_KEY
+ secret_access_key: $AWS_SECRET_KEY
