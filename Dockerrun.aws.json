@@ -22,7 +22,7 @@
 		},
 		{
 		    "name": "nginx",
-		    "image": "zeta/multi-nginx",
+		    "image": "zetajonathan/multi-nginx",
 		    "hostname": "nginx",
 		    "essential": true,
 		    "memory": 128,
